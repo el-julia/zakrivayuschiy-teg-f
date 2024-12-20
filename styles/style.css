@@ -20,13 +20,14 @@
   background-size: cover;
 }
 
-
-/* header */
 .content {
   max-inline-size: 696px;
   margin: 0 auto;
   margin-block-start: 100px;
 }
+
+/* header */
+
 .header {
   display: flex;
   flex-direction: column;
@@ -34,11 +35,10 @@
   justify-content: center;
   gap: 20px;
   padding-top: clamp(7.5rem, 7.357rem + 0.714vw, 8rem);
-  padding-bottom: clamp(7.5rem, 7.357rem + 0.714vw, 8rem); 
+  padding-bottom: clamp(7.5rem, 7.357rem + 0.714vw, 8rem);
   /*сделай clamp */
   background-color: var(--white, #fff);
   border: 2px solid var(--black, #000);
-  
 }
 
 .header__title {
@@ -56,11 +56,12 @@
 
 /* card */
 
-.main {
+.cards-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
+
 }
 
 .card {
@@ -87,10 +88,10 @@
   text-transform: uppercase;
   color: var(--black);
   text-shadow:
-  0 var(--white), 
-  0 1px var(--white), 
-  0 -1px var(--white), 
-  1px 0 var(--white);
+    0 var(--white),
+    0 1px var(--white),
+    0 -1px var(--white),
+    1px 0 var(--white);
 }
 
 @supports((text-stroke: 1px var(--white)) or (-webkit-text-stroke: 1px var(--white))) {
@@ -99,9 +100,9 @@
     text-stroke: 1px var(--white);
     text-shadow: none;
   }
-} 
+}
 
-
+/* изображения */
 .card__image {
   margin: 0;
   position: relative;
@@ -116,6 +117,23 @@
   max-block-size: 100%;
   object-fit: cover;
 }
+
+
+.card:nth-child(1) .image {
+  filter: blur(50px);
+}
+
+.card:nth-child(2) .image {
+  filter: blur(1px);
+}
+
+.card:nth-child(3) .image {
+  filter: blur(0px);
+}
+
+
+
+/* изображения */
 
 .card__content {
   display: flex;
@@ -141,13 +159,10 @@
 
 
 .card__like-button {
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  font-family: var(--accent-font);
-  font-size: 14px;
   padding: 12.5px 37px;
   block-size: 38px;
   inline-size: 130px;
@@ -157,30 +172,43 @@
   overflow: hidden;
   cursor: pointer;
 }
+
 .card__like-button span {
   position: relative;
   z-index: 1;
-  mix-blend-mode: difference; /* Режим смешивания */
+  mix-blend-mode: difference;
+  /* Режим смешивания */
 }
+
+.button__text {
+  color: var(--black, #000);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  color: var(--mix-color);
+  line-height: 90%;
+  font-weight: 400;
+}
+
 
 
 /* состояние кнопки like */
 .card__like-button:before {
   content: "";
+  display: block;
   position: absolute;
   bottom: 0;
   left: 0;
   inline-size: 100%;
   block-size: 100%;
   transform: translateX(-100%);
-	background-color: var(--black, #000);
-	transition: transform 0.5s ease-in-out;
+  background-color: var(--black, #000);
+  transition: transform 0.5s ease-in-out;
   background-blend-mode: difference;
   z-index: 0;
 }
 
-.card__like-button:hover:before {
-	transform: translateX(0);
+.card__like-button:hover:not(:active):before {
+  transform: translateX(0);
 }
 
 
@@ -213,4 +241,3 @@
   border: none;
   padding: 0;
 }
-
