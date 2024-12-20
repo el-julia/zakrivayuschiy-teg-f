@@ -1,1 +1,39 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font: 'Inter', sans-serif;
+    --accent-font: 'PressStart2P', monospace;
+
+    --font-weight-regular: 400; /* Основной вес текста */
+    --font-weight-bold: 700; /* Вес заголовков */
+
+    /* Вариативные настройки для Inter (не знаю зачем) */
+    --font-variation-regular: "wght" var(--font-weight-regular);
+
+    /* цвета */
+    --white: #fff;
+    --black: #000;
+
+    /* ширина */
+    --max-inline-size: 700px;
+
+    /* градиент */
+    --gradient: repeating-linear-gradient(
+      90deg, 
+      #d3d3d3 0, 
+      #d3d3d3 2px, 
+      transparent 2px, 
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg, 
+      #d3d3d3 0, 
+      #d3d3d3 2px, 
+      transparent 2px, 
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom, 
+      #e7e7e7 0.01%, 
+      #1a1a1a 100%
+    );
+}
