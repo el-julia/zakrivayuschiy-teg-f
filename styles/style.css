@@ -166,18 +166,11 @@
   padding: 12.5px 37px;
   block-size: 38px;
   inline-size: 130px;
-  color: var(--black, #000);
+  /* color: var(--black, #000); */
   background-color: var(--white, #fff);
   border: 2px solid var(--black, #000);
   overflow: hidden;
   cursor: pointer;
-}
-
-.card__like-button span {
-  position: relative;
-  z-index: 1;
-  mix-blend-mode: difference;
-  /* Режим смешивания */
 }
 
 .button__text {
@@ -187,11 +180,16 @@
   color: var(--mix-color);
   line-height: 90%;
   font-weight: 400;
+  mix-blend-mode: difference;
+  z-index: 1;
+  position: relative;
 }
 
 
 
+
 /* состояние кнопки like */
+
 .card__like-button:before {
   content: "";
   display: block;
@@ -209,35 +207,46 @@
 
 .card__like-button:hover:not(:active):before {
   transform: translateX(0);
+  border: 2px solid var(--black, #000);
 }
 
 
-.card__like-button:active {
+.card__like-button:active:not(:hover) {
   border: 2px solid var(--black, #000);
   outline: none;
 }
 
 .card__like-button:focus {
-  box-shadow: none;
   outline: none;
-  border: none;
 }
 
 .card__like-button:focus-visible {
   border: 2px solid var(--black, #000);
   box-shadow: 2px 2px 0px 0px var(--black, #000);
   transition: .3s;
+  outline: none;
 }
 
-.button__text-white {
-  position: relative;
-}
 
 /* состояние кнопки like*/
 
 
 .card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
-  border: none;
   padding: 0;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+/* состояние кнопки сердце*/
+
+.card__icon-button:focus {
+  outline: none;
+}
+.card__icon-button:focus-visible {
+  border: 2px solid var(--black, #000);
+  transition: 0.3s ease;
 }
