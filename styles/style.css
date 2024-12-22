@@ -258,6 +258,7 @@
 
 .button__memory {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -267,9 +268,41 @@
   mix-blend-mode: difference;
 }
 
+.save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* .card__like-button svg {
   width: 24px;
   height: 24px;
   fill: currentColor; /* Наследование цвета текста 
 } */
  
+
+.cookies-dialog[open] {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  inline-size: 100%;
+  text-align: center;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+}
+
+.cookies-dialog[open] svg {
+  inline-size: 40px;
+}
+
+.cookies-dialog[open] .button {
+  inline-size: initial;
+}
+
+.cookies-dialog[open]::backdrop {
+  background: #000;
+  opacity: 0.75;
+}
