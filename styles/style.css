@@ -15,7 +15,7 @@
   min-block-size: 100dvb;
   font-family: var(--main-font, sans-serif);
   font-variation-settings: 'wght' 400;
-  background-image: var(--gradient);
+  background-image: var(--gradient, linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%));
   background-attachment: fixed;
   background-size: cover;
 }
@@ -43,11 +43,17 @@
 .header__title {
   font-family: var(--accent-font);
   font-size: clamp(3.063rem, 2.777rem + 1.429vw, 4.063rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000;
 }
 
 .header__description {
   font-family: var(--accent-font);
   font-size: clamp(0.875rem, 0.714rem + 0.804vw, 1.438rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000;
 }
 
 /* header */
@@ -63,8 +69,8 @@
 }
 
 .card {
-  outline: 2px solid var(--black, #000);
-  background-color: var(--white);
+  border: 2px solid var(--black, #000);
+  background-color: var(--white, #fff);
 }
 
 .card__title {
@@ -82,6 +88,7 @@
   mix-blend-mode: hard-light;
   opacity: 0.5;
   font-size: 14px;
+  font-weight: 400;
   font-family: var(--accent-font);
   color: var(--black);
   text-shadow:
@@ -114,9 +121,9 @@
 
 .image {
   display: block;
-  inline-size: 100%;
+  /* inline-size: 100%;
   block-size: 100%;
-  max-block-size: 100%;
+  max-block-size: 100%; */
   object-fit: cover;
 }
 
@@ -164,14 +171,15 @@
   font-weight: var(--font-weight-bold);
   font-size: 18px;
   font-variation-settings: 'wght' var(--font-weight-regular);
+  line-height: 117%;
 }
 
 .card__buttons {
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: 0 25px 25px 0;
-  gap: 12px;
+  padding: 0 25px 23px 0;
+  gap: 5px;
 }
 
 .button {
@@ -275,6 +283,14 @@
   padding: 0;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
+  height: 38px; /* Устанавливаем высоту равной высоте кнопки Like */
+  width: 38px;
+
+}
+
+.card__icon-button svg {
+  width: 100%;
+  height: 100%;
 }
 
 /* состояние кнопки сердце*/
@@ -304,6 +320,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-block-start: 50px;
+  margin-block-end: 100px;
 }
 
 /* .card__like-button svg {
@@ -357,4 +375,10 @@
   white-space: normal;
   max-inline-size: 234px;
   text-align: left;
+}
+
+@media (width < 376px) {
+  .button__memory {
+    flex-direction: column;
+  }
 }
