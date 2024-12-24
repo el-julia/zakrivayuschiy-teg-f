@@ -21,10 +21,12 @@
 }
 
 .content {
-  max-inline-size: 696px;
+  max-inline-size: 700px;
   margin: 0 auto;
   margin-block-start: 100px;
 }
+
+
 
 /* header */
 
@@ -42,7 +44,7 @@
 
 .header__title {
   font-family: var(--accent-font);
-  font-size: clamp(3.063rem, 2.777rem + 1.429vw, 4.063rem);
+  font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   font-weight: 400;
   text-transform: uppercase;
   color: #000;
@@ -50,7 +52,7 @@
 
 .header__description {
   font-family: var(--accent-font);
-  font-size: clamp(0.875rem, 0.714rem + 0.804vw, 1.438rem);
+  font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
   font-weight: 400;
   text-transform: uppercase;
   color: #000;
@@ -78,7 +80,8 @@
   font-weight: var(--font-weight-bold);
   font-variation-settings: 'wght' var(--font-weight-bold);
   font-size: 18px;
-  padding: 4px 10px;
+  padding: 0 10px;
+  line-height: 170%;
 }
 
 .card__image-label {
@@ -105,9 +108,10 @@
 
 @supports((text-stroke: 1px var(--white)) or (-webkit-text-stroke: 1px var(--white))) {
   figcaption {
-    -webkit-text-stroke: 1px var(--white);
-    text-stroke: 1px var(--white);
+    -webkit-text-stroke: 2px var(--white);
+    text-stroke: 2px var(--white);
     text-shadow: none;
+    paint-order: stroke fill;
   }
 }
 
@@ -121,9 +125,9 @@
 
 .image {
   display: block;
-  /* inline-size: 100%;
+  inline-size: 100%;
   block-size: 100%;
-  max-block-size: 100%; */
+  max-block-size: 100%;
   object-fit: cover;
 }
 
@@ -178,8 +182,8 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: 0 25px 23px 0;
-  gap: 5px;
+  padding: 0 25px 25px 0;
+  gap: 6px;
 }
 
 .button {
@@ -187,7 +191,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 12.5px 37px;
+  padding: 15px 20px;
   background-color: var(--white, #fff);
   border: 2px solid var(--black, #000);
   overflow: hidden;
@@ -253,27 +257,8 @@
   outline: none;
 }
 
-.card__like-button:hover::before {}
-
-/* .button:hover:not(:active):before {
-  transform: translateX(0);
-  border: 2px solid var(--black, #000);
-  inline-size: 100%;
-}
-
-
-.button:active:not(:hover) {
-  border: 2px solid var(--black, #000);
-  outline: none;
-}
-
-
-
- */
-
 
 /* состояние кнопки like*/
-
 
 .card__icon-button {
   display: flex;
@@ -283,14 +268,14 @@
   padding: 0;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
-  height: 38px; /* Устанавливаем высоту равной высоте кнопки Like */
-  width: 38px;
-
+  height: 38px;
+  width: 41px;
 }
 
 .card__icon-button svg {
-  width: 100%;
-  height: 100%;
+  width: 38px;
+  height: 32px;
+  overflow: visible;
 }
 
 /* состояние кнопки сердце*/
@@ -361,8 +346,8 @@
 
 .dialog__title {
   display: flex;
-   gap: 20px; 
-
+  gap: 20px;
+  align-items: center;
 }
 
 .dialog__text {
@@ -377,8 +362,37 @@
   text-align: left;
 }
 
+.dialog .diskette {
+  width: 39px;
+  height: 39px;
+}
+
+.diskette {
+  width: 21px;
+  height: 21px;
+}
+
 @media (width < 376px) {
+  body {
+    max-width: 375px;
+  }
+
   .button__memory {
     flex-direction: column;
+  }
+
+  .card__title {
+    padding: 5px 10px 5px;
+    line-height: 113%;
+  }
+
+  .card__image-label {
+    top: 22px;
+    right: 11px;
+  }
+
+  .diskette {
+    width: 28px;
+    height: 28px;
   }
 }
