@@ -43,17 +43,17 @@
 }
 
 .header__title {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, monospace);
   font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular, 400);
   text-transform: uppercase;
   color: #000;
 }
 
 .header__description {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, monospace);
   font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular, 400);
   text-transform: uppercase;
   color: #000;
 }
@@ -92,7 +92,7 @@
   opacity: 0.5;
   font-size: 14px;
   font-weight: 400;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, monospace);
   color: var(--black);
   text-shadow:
     0 var(--white),
@@ -202,8 +202,7 @@
 
 
 .button__text {
-  color: var(--black, #000);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, monospace);
   font-size: 14px;
   color: var(--mix-color);
   line-height: 90%;
@@ -351,7 +350,7 @@
 }
 
 .dialog__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, monospace);
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
