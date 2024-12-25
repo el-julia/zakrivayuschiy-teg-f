@@ -18,53 +18,53 @@
 
 /* main-body */
   .like-icon .main-body {
-    fill: var(--white);
+    fill: var(--white, #fff);
     transition: fill .3s;
   }
 
   .card__icon-button:hover .main-body {
-    fill: #000;
+    fill: var(--black, #000);
     transition: fill .5s 3ms;
   }
   
   .card__icon-button:active .main-body {
-    fill: red;
+    fill: var(--red, #ff0000);
     transition: fill .3s 6ms;
   }
   
   .like-icon.is-liked .main-body {
-    fill: red;
+    fill: var(--red, #ff0000);
     transition: fill .3s 3ms;
   }
   
     /* core */
   .like-icon .core {
-    fill: #fff;
+    fill: var(--white, #fff);
     transition: fill .3s 5ms;
   }
   
   .card__icon-button:hover .core {
-    fill: #000;
+    fill: var(--black, #000);
     transition: fill .3s 3ms;
   }
   
   .card__icon-button:active .core {
-    fill: red;
+    fill: var(--red, #ff0000);
     transition: fill .3s;
   }
   
   .like-icon.is-liked .core {
-    fill: red;
+    fill: var(--red, #ff0000);
     transition: fill .3s;
   }
   
   /* contour */
   .like-icon .contour {
-    fill: #000;
+    fill: var(--black, #000);
   }
   
   .like-icon.is-liked .contour {
-    fill: red;
+    fill: var(--red, #ff0000);
     transition: fill .3s 5ms;
   }
 
@@ -72,15 +72,15 @@
 
   .like-icon .sparks {
     opacity: 0;
-    fill: red;
+    fill: var(--red, #ff0000);
   }
   
   .like-icon.is-liked .sparks {
-    animation: sparks .3s ease;
+    animation: sparks .3s ease-in;
   }
   
   .like-icon.is-liked .heart {
-    animation: scale .3s ease;
+    animation: scale .3s ease-in;
   }
 
 
@@ -91,7 +91,7 @@
     }
   
     to {
-      scale: 1;
+      scale: 1.25;
     }
   }
   

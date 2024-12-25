@@ -26,8 +26,6 @@
   margin-block-start: 100px;
 }
 
-
-
 /* header */
 
 .header {
@@ -47,7 +45,7 @@
   font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   font-weight: var(--font-weight-regular, 400);
   text-transform: uppercase;
-  color: #000;
+  color: var(--black, #000);
 }
 
 .header__description {
@@ -55,7 +53,7 @@
   font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
   font-weight: var(--font-weight-regular, 400);
   text-transform: uppercase;
-  color: #000;
+  color: var(--black, #000);
 }
 
 /* header */
@@ -67,7 +65,6 @@
   flex-direction: column;
   align-items: center;
   gap: 50px;
-
 }
 
 .card {
@@ -77,8 +74,8 @@
 
 .card__title {
   font-family: var(--main-font, sans-serif);
-  font-weight: var(--font-weight-bold);
-  font-variation-settings: 'wght' var(--font-weight-bold);
+  font-weight: var(--font-weight-bold, 700);
+  font-variation-settings: 'wght' var(--font-weight-bold, 700);
   font-size: 18px;
   padding: 0 10px;
   line-height: 170%;
@@ -93,12 +90,12 @@
   font-size: 14px;
   font-weight: 400;
   font-family: var(--accent-font, monospace);
-  color: var(--black);
+  color: var(--black, #000);
   text-shadow:
-    0 var(--white),
-    0 1px var(--white),
-    0 -1px var(--white),
-    1px 0 var(--white);
+    0 var(--white, #fff),
+    0 1px var(--white, #fff),
+    0 -1px var(--white, #fff),
+    1px 0 var(--white, #fff);
 }
 
 .uppercase {
@@ -106,10 +103,10 @@
 }
 
 
-@supports((text-stroke: 1px var(--white)) or (-webkit-text-stroke: 1px var(--white))) {
+@supports((text-stroke: 1px var(--white, #fff)) or (-webkit-text-stroke: 1px var(--white, #fff))) {
   figcaption {
-    -webkit-text-stroke: 2px var(--white);
-    text-stroke: 2px var(--white);
+    -webkit-text-stroke: 2px var(--white, #fff);
+    text-stroke: 2px var(--white, #fff);
     text-shadow: none;
     paint-order: stroke fill;
   }
@@ -172,9 +169,9 @@
 
 .card__paragraph {
   font-family: var(--main-font, sans-serif);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold, 700);
   font-size: 18px;
-  font-variation-settings: 'wght' var(--font-weight-regular);
+  font-variation-settings: 'wght' var(--font-weight-regular, 400);
   line-height: 117%;
 }
 
@@ -204,25 +201,18 @@
 .button__text {
   font-family: var(--accent-font, monospace);
   font-size: 14px;
-  color: var(--mix-color);
+  color: var(--mix-color, #fff);
   line-height: 90%;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular, 400);
   mix-blend-mode: difference;
   z-index: 1;
   position: relative;
 }
-
-
-
-
 /* состояние кнопки like */
 
 .card__like-button {
-
   block-size: 38px;
   inline-size: 130px;
-  /* color: var(--black, #000); */
-
 }
 
 .button:before {
@@ -267,13 +257,13 @@
   padding: 0;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
-  height: 38px;
-  width: 41px;
+  block-size: 38px;
+  inline-size: 41px;
 }
 
 .card__icon-button svg {
-  width: 38px;
-  height: 32px;
+  inline-size: 38px;
+  block-size: 32px;
   overflow: visible;
 }
 
@@ -295,7 +285,7 @@
 }
 
 .button__memory svg {
-  background: #fff;
+  background: var(--white, #fff);
   filter: invert(100%);
   mix-blend-mode: difference;
 }
@@ -307,13 +297,6 @@
   margin-block-start: 50px;
   margin-block-end: 100px;
 }
-
-/* .card__like-button svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor; /* Наследование цвета текста 
-} */
-
 
 .dialog[open] {
   position: fixed;
@@ -329,17 +312,12 @@
   padding: 30px;
 }
 
-/* .dialog[open] svg {
-  inline-size: 40px;
-  block-size: 40px;
-} */
-
 .dialog[open] .button {
   inline-size: 100%;
 }
 
 .dialog[open]::backdrop {
-  background: #000;
+  background: var(--black, #000);
   opacity: 0.75;
 }
 
@@ -355,27 +333,23 @@
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-  color: #000;
+  color: var(--black, #000);
   white-space: normal;
   max-inline-size: 234px;
   text-align: left;
 }
 
 .dialog .diskette {
-  width: 39px;
-  height: 39px;
+  inline-size: 39px;
+  block-size: 39px;
 }
 
 .diskette {
-  width: 21px;
-  height: 21px;
+  inline-size: 21px;
+  block-size: 21px;
 }
 
 @media (width < 376px) {
-  body {
-    max-width: 375px;
-  }
-
   .button__memory {
     flex-direction: column;
   }
@@ -391,7 +365,7 @@
   }
 
   .diskette {
-    width: 28px;
-    height: 28px;
+    inline-size: 28px;
+    block-size: 28px;
   }
 }

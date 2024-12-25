@@ -6,13 +6,14 @@
     --font-weight-regular: 400; /* Основной вес текста */
     --font-weight-bold: 700; /* Вес заголовков */
 
-    /* Вариативные настройки для Inter (не знаю зачем) */
+
     --font-variation-regular: "wght" var(--font-weight-regular);
 
     /* цвета */
     --white: #fff;
     --black: #000;
     --mix-color: #fff;
+    --red: #ff0000;
 
     /* ширина */
     --max-inline-size: 700px;
