@@ -60,16 +60,17 @@
 
 /* card */
 
-.cards-list {
+/* .cards-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
-}
+} */
 
 .card {
   border: 2px solid var(--black, #000);
   background-color: var(--white, #fff);
+  margin-block-end: 50px;
 }
 
 .card__title {
@@ -104,7 +105,7 @@
 
 
 @supports((text-stroke: 1px var(--white, #fff)) or (-webkit-text-stroke: 1px var(--white, #fff))) {
-  figcaption {
+  .card__image-label {
     -webkit-text-stroke: 2px var(--white, #fff);
     text-stroke: 2px var(--white, #fff);
     text-shadow: none;
@@ -184,6 +185,7 @@
 }
 
 .button {
+  appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -195,9 +197,6 @@
   cursor: pointer;
 }
 
-
-
-
 .button__text {
   font-family: var(--accent-font, monospace);
   font-size: 14px;
@@ -208,6 +207,7 @@
   z-index: 1;
   position: relative;
 }
+
 /* состояние кнопки like */
 
 .card__like-button {
@@ -340,13 +340,29 @@
 }
 
 .dialog .diskette {
-  inline-size: 39px;
+  min-inline-size: 39px;
   block-size: 39px;
 }
 
 .diskette {
   inline-size: 21px;
   block-size: 21px;
+}
+
+.button__text-uppercase {
+  font-family: var(--accent-font, monospace);
+  font-size: 14px;
+  color: var(--mix-color, #fff);
+  line-height: 90%;
+  font-weight: var(--font-weight-regular, 400);
+  mix-blend-mode: difference;
+  z-index: 1;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.dialog__button {
+  block-size: 38px;
 }
 
 @media (width < 376px) {
@@ -367,5 +383,9 @@
   .diskette {
     inline-size: 28px;
     block-size: 28px;
+  }
+
+  .dialog[open] {
+    padding: 30px 42px;
   }
 }
