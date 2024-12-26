@@ -30,16 +30,13 @@
   }
 }
 
-
-/*АНИМАЦИЯ СЕРДЦА*/
-/*анимирую сердцевину*/
 .like-icon .core {
-  fill: #fff;
+  fill: var(--white, #fff);
   transition: fill 0.3s 0.03s linear;
 }
 
 .card__icon-button:hover .core {
-  fill: #000;
+  fill: var(--black, #000);
   transition: fill 0.3s linear;
 }
 
@@ -53,57 +50,46 @@
   transition: fill 0.3s linear;
 }
 
-/*закончил сердцевину*/
-/*анимирую тело*/
 .like-icon .main-body {
-  fill: #fff;
+  fill: var(--white, #fff);
   transition: fill 0.3s linear;
 }
 
 .card__icon-button:hover .main-body {
-  fill: #000;
+  fill: var(--black, #000);
   transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:active .main-body {
-  fill: #ff0000;
+  fill: var(--red, #ff0000);
   transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .main-body {
-  fill: #ff0000;
+  fill: var(--red, #ff0000);
   transition: fill 0.3s 0.05s linear;
 }
-/*закончил тело*/
 
-/*анимирую контур*/
 .like-icon .contour {
-  fill: #000;
+  fill: var(--black, #000);
   transition: fill 0.1s linear;
 }
 
 .like-icon.is-liked .contour {
-  fill: #ff0000;
+  fill: var(--red, #ff0000);
   transition: fill 0.3s 0.06s linear;
 }
-/*закончил контур*/
 
-/*анимирую искры*/
 .sparks {
   opacity: 0;
-  fill:#ff0000
+  fill: var(--red, #ff0000);
 }
 
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s ease-in 0.3s;
 }
-/*закончил искры*/
-
-/*анимирую размер сердца*/
 
 .like-icon.is-liked .heart {
   transform-origin: center center;
   animation: scale 0.3s ease-in 0.1s;
 }
-/*закончил с размером сердца*/
-/*ЗАКОНЧИЛ АНИМАЦИЯ СЕРДЦА*/
